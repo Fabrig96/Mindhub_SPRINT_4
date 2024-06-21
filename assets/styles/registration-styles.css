@@ -86,18 +86,42 @@ nav a:hover {
 }
 
 /* encabezados */
-h1 {
+/* h1 {
   font-size: 38px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(13, 13, 175);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 8px;
-  /* margin-top: 10px; */
+ 
+  transition: transform 0.3s, box-shadow 0.3s;
+} */
+
+h1 {
+  font-size: 38px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d0daf; /* Un azul brillante */
+  text-shadow: 
+    0 0 2px #0d0daf,
+    0 0 2px #0d0daf,
+    0 0 50px #ef2828;
+ 
+  
+  padding: 10px;
+  border-radius: 8px;
+ 
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-h2 {
+h1:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 2 20px #00e6e6, 
+   
+}
+
+
+/* h2 {
   width: 100%;
   align-self: center;
   font-size: 35px;
@@ -105,10 +129,62 @@ h2 {
   border: 2px solid black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 0px;
-  background-color: rgb(39, 232, 151);
+ 
+  background-color: rgb(72, 160, 60);
   padding: 5px;
   z-index: 3;
+} */
+
+
+h2 {
+  width: 100%;
+  align-self: center;
+  font-size: 35px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 0px;
+  background-color: rgb(72, 160, 60);
+  padding: 5px;
+  z-index: 3;
+  color: white; /* Color del texto */
+  border: 2px solid black; /* Borde del contenedor */
+  position: relative;
+  overflow: hidden; /* Para evitar desbordamiento */
 }
+
+h2::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 3px solid white; /* Borde blanco alrededor del texto */
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Para situar el borde detrás del texto */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 1;
+  pointer-events: none; /* Para que no interfiera con la interacción del usuario */
+}
+
+h2:hover {
+  background-color: rgb(60, 140, 50); 
+  border-color: white; 
+  
+  transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
 
 h3 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -314,6 +390,7 @@ label {
 
 button {
   display: block;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #4caf50;
@@ -355,7 +432,11 @@ footer {
   width: 250px;
   transition: transform 0.3s ease;
 }
-
+#logoheader{
+  height: 100px;
+  width: 150px;
+  transition: transform 0.3s ease;
+}
 #logo:hover {
   transform: rotateY(360deg);
 }

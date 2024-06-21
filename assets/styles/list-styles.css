@@ -23,7 +23,7 @@ header {
 }
 
 /*Encabezados*/
-h1 {
+/* h1 {
   font-size: 38px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(13, 13, 175);
@@ -31,7 +31,31 @@ h1 {
   padding: 10px;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
+} */
+h1 {
+  font-size: 38px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d0daf; /* Un azul brillante */
+  text-shadow: 
+    0 0 2px #0d0daf,
+    0 0 2px #0d0daf,
+    0 0 50px #ef2828;
+ 
+  
+  padding: 10px;
+  border-radius: 8px;
+ 
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+h1:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 2 20px #00e6e6, 
+   
+}
+
+
 
 h3,
 h4 {
@@ -188,7 +212,11 @@ footer {
 #logo:hover {
   transform: rotateY(360deg);
 }
-
+#logoheader{
+  height: 100px;
+  width: 150px;
+  transition: transform 0.3s ease;
+}
 /* Adicionales */
 .a-main {
   background-color: #399b23;
